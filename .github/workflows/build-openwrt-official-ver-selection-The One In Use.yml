@@ -67,7 +67,7 @@ jobs:
         #Below is added to get the versions if when the REPO Branch is master rather than the direct version
         cd openwrt
         git tag
-        git checkout v23.05
+        git checkout v23.05.0-rc2
         
     - name: Load custom feeds
       run: |
