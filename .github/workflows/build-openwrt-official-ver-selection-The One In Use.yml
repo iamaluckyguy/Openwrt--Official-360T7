@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt Official 22.03.5-The One In Use -Ver Selection From Git Checkout
+name: Build OpenWrt Official 23.05-The One In Use -Ver Selection From Git Checkout
 
 on:
   repository_dispatch:
@@ -24,10 +24,10 @@ env:
   REPO_URL: https://git.openwrt.org/openwrt/openwrt.git
   #REPO_BRANCH: master
   #The Repo Branch Below works without changing the Clone souce code part
-  #REPO_BRANCH: openwrt-22.03
+  #REPO_BRANCH: openwrt-23.05
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .x86config
+  CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -67,7 +67,7 @@ jobs:
         #Below is added to get the versions if when the REPO Branch is master rather than the direct version
         cd openwrt
         git tag
-        git checkout v22.03.5
+        git checkout v23.05
         
     - name: Load custom feeds
       run: |
